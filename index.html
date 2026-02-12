@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Zammad Chat Test</title>
+    <title>Zammad Chat & Form Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        
+        /* Style for the Chat Button */
         .open-zammad-chat {
             padding: 10px 20px;
             background-color: #FFC30B;
@@ -11,17 +15,33 @@
             cursor: pointer;
             font-weight: bold;
             font-size: 16px;
+            margin: 10px;
+        }
+
+        /* Style for the Feedback Button */
+        #zammad-feedback-form {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
+
     <h1>My Test Website</h1>
-    <p>Click the button below to start the chat.</p>
+    <p>Test the Chat and the Incident Report form below.</p>
 
     <button class="open-zammad-chat">Chat with us</button>
 
+    <button id="zammad-feedback-form">Report Incident</button>
+
+
     <script src="http://tickets.bigtimeempire.com/assets/chat/chat-no-jquery.min.js"></script>
-    
     <script>
     (function() {
       new ZammadChat({
@@ -29,25 +49,3 @@
         background: '#FFC30B',
         fontSize: '18px',
         chatId: 1,
-      });
-    })();
-    </script>
-
-<button id="zammad-feedback-form">Feedback</button>
-
-<script id="zammad_form_script" src="https://tickets.bigtimeempire.com/assets/form/form.js"></script>
-
-<script>
-$(function() {
-  $('#zammad-feedback-form').ZammadForm({
-    messageTitle: 'Incident Report',
-    messageSubmit: 'Submit',
-    messageThankYou: 'Thank you for your inquiry (#%s)! We\'ll contact you as soon as possible.',
-    showTitle: true,
-    modal: true
-  });
-});
-</script>
-
-</body>
-</html>
