@@ -49,3 +49,26 @@
         background: '#FFC30B',
         fontSize: '18px',
         chatId: 1,
+        show: false, // Keep false so it only opens when clicking the yellow button
+        flat: true
+      });
+    })();
+    </script>
+
+
+    <script id="zammad_form_script" src="http://tickets.bigtimeempire.com/assets/form/form.js"></script>
+
+    <script>
+    $(function() {
+      $('#zammad-feedback-form').ZammadForm({
+        messageTitle: 'Incident Report',
+        messageSubmit: 'Submit',
+        messageThankYou: 'Thank you for your inquiry (#%s)! We\'ll contact you as soon as possible.',
+        showTitle: true,
+        modal: true
+      });
+    });
+    </script>
+
+</body>
+</html>
